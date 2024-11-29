@@ -7,79 +7,94 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-  }
-  
-  h1 {
+}
+
+h1 {
     margin: 20px 0;
     font-size: 2.5em;
     color: #ffacc8;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  }
-  
-  audio {
+}
+
+audio {
     display: none;
-  }
-  
-  #photo-container {
+}
+
+#photo-container {
     position: relative;
     width: 100%;
     height: calc(100vh - 100px);
     overflow: hidden;
-  }
-  
-  /* Photo styles */
-  .photo {
+}
+
+/* Photo styles */
+.photo {
     position: absolute;
-    width: 300px; /* Larger size for better visibility */
+    width: 300px;
     height: 300px;
     object-fit: cover;
     cursor: grab;
     border: 2px solid white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease;
-  }
-  
-  .photo:active {
+}
+
+.photo:active {
     cursor: grabbing;
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) { /* Tablets */
+}
+
+/* Responsive design */
+@media (max-width: 768px) { /* Tablets */
     .photo {
-      width: 170px; /* Adjusted size for tablet */
-      height: 170px;
+        width: 170px;
+        height: 170px;
     }
-  
+
     h1 {
-      font-size: 2em; /* Smaller font for smaller screens */
+        font-size: 2em;
     }
+
     #reset-button {
         font-size: 0.9em;
         padding: 8px 16px;
-      }
-  }
-  
-  @media (max-width: 480px) { /* Mobile phones */
+    }
+
+    /* Disable drag-and-drop functionality for mobile */
+    .photo {
+        cursor: default;
+    }
+
+    #reset-button {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) { /* Mobile phones */
     #photo-container {
         position: relative;
         top: -40px;
     }
     .photo {
-      width: 150px; /* Adjusted size for mobile */
-      height: 150px;
+        width: 150px;
+        height: 150px;
     }
-  
+
     h1 {
-      font-size: 1.8em; /* Smaller font for mobile screens */
+        font-size: 1.8em;
     }
 
     #reset-button {
         font-size: 0.8em;
         padding: 6px 12px;
-      }
-  }
-  
-  #reset-button {
+    }
+
+    /* Disable drag-and-drop functionality for mobile */
+    .photo {
+        cursor: default;
+    }
+}
+
+#reset-button {
     background-color: #ff4081;
     color: white;
     border: none;
@@ -90,10 +105,8 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s ease;
     margin: 20px auto;
-  }
-  
-  #reset-button:hover {
-    background-color: #a80000;
-  }
+}
 
-  
+#reset-button:hover {
+    background-color: #a80000;
+}
